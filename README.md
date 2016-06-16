@@ -75,7 +75,7 @@ To access an individual message, you will need to pass the id of a message to yo
 
 This can be achieved by setting up a new route that passes the message id (number) to your template, like so:
 
-[!screenshot](http://i.imgur.com/ap8YAMJ.png)
+![screenshot](http://i.imgur.com/ap8YAMJ.png)
 
 Inside the template, we will use this ID (number) to retrieve the message, but, first we check to ensure we have actually been passed an ID:
 
@@ -88,7 +88,7 @@ Inside the template, we will use this ID (number) to retrieve the message, but, 
 If we have an ID, then we pass this to the getPrivateMessage method (which is a twig extension built into the plugin):
 
 ```twig
-{% set message = number|getPrivateMessage %}}
+{% set message = number|getPrivateMessage %}
 ```
 
 If this method does not return an associated message, it will return false. We may wish to handle that also:
