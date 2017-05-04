@@ -64,6 +64,22 @@ class PrivateMessaging_MessagesService extends BaseApplicationComponent
 	}
 
 	/**
+	 * Get sent messages
+	 *
+	 * @return array
+	 */
+	public function getSentMessages() {
+
+		if (!craft()->userSession || !craft()->userSession->getUser()) return [];
+
+		$userId = craft()->userSession->getUser()->id;
+
+		$records = PrivateMessaging_MessageRecord::model()->findAllByAttributes(['senderId' => $userId], ['order' => 'id DESC']);
+
+		return $records;
+	}
+
+	/**
 	 * Get message from id
 	 *
 	 * @param int $id

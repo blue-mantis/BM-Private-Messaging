@@ -23,6 +23,7 @@ class PrivateMessagingTwigExtension extends \Twig_Extension
 		$globals['totalPrivateMessageCount'] = craft()->privateMessaging_messages->getTotalMessageCount();
 		$globals['unreadPrivateMessageCount'] = craft()->privateMessaging_messages->getUnreadMessageCount();
 		$globals['privateMessages'] = craft()->privateMessaging_messages->getMessages();
+		$globals['sentMessages'] = craft()->privateMessaging_messages->getSentMessages();
 		return $globals;
 	}
 
